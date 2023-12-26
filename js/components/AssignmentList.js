@@ -15,7 +15,6 @@ export default {
         >
         </assignment>
     </ul>
-    <p>{{ assignments }}</p>
 </section>
     `,
     props: {
