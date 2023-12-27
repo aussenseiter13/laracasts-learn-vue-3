@@ -1,0 +1,38 @@
+{
+    "assignments": [
+        { "id": 1, "name": "Learn Matices", "complete": false, "tag": "math" },
+        {
+            "id": 1,
+            "name": "Learn Functions",
+            "complete": false,
+            "tag": "math"
+        },
+        {
+            "id": 1,
+            "name": "Learn Integrals",
+            "complete": false,
+            "tag": "math"
+        },
+        {
+            "id": 1,
+            "name": "Vue 3 Series",
+            "complete": false,
+            "tag": "science"
+        },
+        {
+            "id": 1,
+            "name": "Practice Design",
+            "complete": false,
+            "tag": "science"
+        },
+        {
+            "id": 1,
+            "name": "Learn Laravel",
+            "complete": false,
+            "tag": "science"
+        },
+        { "id": 1, "name": "Push/Pull", "complete": false, "tag": "sports" },
+        { "id": 1, "name": "Legs", "complete": false, "tag": "sports" },
+        { "id": 1, "name": "Filler", "complete": false, "tag": "sports" }
+    ]
+}

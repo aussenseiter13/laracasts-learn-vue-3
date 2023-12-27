@@ -16,30 +16,16 @@ export default {
         `,
     data() {
         return {
-            assignments: [
-                { id: 1, name: "Finish project", complete: false, tag: "math" },
-                {
-                    id: 2,
-                    name: "Read Chapter 3",
-                    complete: false,
-                    tag: "science",
-                },
-                {
-                    id: 3,
-                    name: "Guguli Muguli",
-                    complete: true,
-                    tag: "math",
-                },
-                {
-                    id: 3,
-                    name: "Sporty news",
-                    complete: true,
-                    tag: "sports",
-                },
-            ],
+            assignments: [],
         };
     },
-
+    created() {
+        fetch("http://localhost:3000/assignments")
+            .then((res) => res.json())
+            .then((data) => {
+                this.assignments = data;
+            });
+    },
     computed: {
         inProgressAssignments() {
             return this.assignments.filter((a) => !a.complete);
