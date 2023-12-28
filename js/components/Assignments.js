@@ -7,20 +7,32 @@ export default {
         AssignmentCreate: AssignmentCreate,
     },
     template: `
-    <assignment-list title="In Progress" :assignments="inProgressAssignments"></assignment-list>
+    <assignment-list
+        title="In Progress" 
+        :assignments="inProgressAssignments" 
+        >
+        <assignment-create @add="add"></assignment-create>
+    </assignment-list>
     
-    <assignment-list title="Completed" :assignments="completedAssignments"></assignment-list>
+    <assignment-list
+        v-if="showCompleted"
+        @toggle="showCompleted = !showCompleted"
+        title="Completed" 
+        :assignments="completedAssignments"
+        can-toggle
+        >
+    </assignment-list>
 
-    <assignment-create @add="add"></assignment-create>
 
         `,
     data() {
         return {
             assignments: [],
+            showCompleted: true,
         };
     },
     created() {
-        fetch("http://localhost:3000/assignments")
+        fetch("http://localhost:3001/assignments")
             .then((res) => res.json())
             .then((data) => {
                 this.assignments = data;
