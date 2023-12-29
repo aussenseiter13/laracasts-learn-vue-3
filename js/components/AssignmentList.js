@@ -1,9 +1,10 @@
 import Assignment from "./Assignment.js";
 import AssignmentTags from "./AssignmentTags.js";
+import Panel from "./Panel.js";
 
 export default {
     template: `
-    <section
+    <panel
     v-show="assignments.length"
     class="flex flex-col gap-4"
 >
@@ -28,7 +29,7 @@ export default {
     </ul>
 
     <slot></slot>
-</section>
+</panel>
     `,
     props: {
         assignments: Array,
@@ -38,6 +39,7 @@ export default {
     components: {
         assignment: Assignment,
         assignmentTags: AssignmentTags,
+        panel: Panel,
     },
     data() {
         return {
