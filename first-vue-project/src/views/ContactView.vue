@@ -1,10 +1,14 @@
 <script setup>
-import { counter } from '@/stores/counterStore'
+import { useCounterStore } from '@/stores/CounterStore'
+
+let counter = useCounterStore()
 </script>
 
 <template>
     <div class="about">
         <h1>Contact Page {{ counter.count }}</h1>
+        <br />
+        <button @click="counter.decrement()">Decrese</button>
     </div>
 </template>
 
